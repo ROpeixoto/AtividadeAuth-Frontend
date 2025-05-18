@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useAuth } from '../contexts/AuthContext';
 import { getItemsWithDetails, createItem, updateItem, deleteItem } from '../services/itemService';
-import '/workspaces/AtividadeAuth-Frontend/app/src/Dashboard.css'; // Importe o CSS para estilização
+import 'app/src/Dashboard.css'; // Importe o CSS para estilização
 
 
 function DashboardPage() {
