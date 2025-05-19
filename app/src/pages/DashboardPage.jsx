@@ -52,19 +52,19 @@ const fetchItems = async () => {
  // Em DashboardPage.jsx, modifique a função handleEditSave:
 const handleEditSave = async () => {
   try {
-    // Certifique-se de que o ID está sendo passado corretamente
-    console.log("Editando item:", editingItem); // Para debug
+
+    console.log("Editando item:", editingItem); 
     
-    // Envie apenas os dados necessários, sem o _id no objeto
+
     const { _id, ...itemData } = editingItem;
     const updatedItem = await updateItem(_id, itemData);
     
-    // Atualize o estado local
+
     setItems(items.map(item => item._id === _id ? updatedItem : item));
     setEditingItem(null);
     toast.success('Item atualizado com sucesso!');
   } catch (error) {
-    console.error("Erro ao atualizar:", error); // Para debug
+    console.error("Erro ao atualizar:", error); 
     toast.error(error.message || 'Erro ao atualizar item');
   }
 };
@@ -92,7 +92,7 @@ const handleEditSave = async () => {
   const handleLogout = () => {
     logout();
     toast.info('Você foi desconectado');
-    // O redirecionamento para /login acontecerá automaticamente pelo ProtectedRoute
+
   };
 
   return (

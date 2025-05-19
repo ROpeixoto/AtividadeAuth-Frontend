@@ -2,28 +2,28 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { loginUser } from '../services/authService'; // O serviço ainda faz a chamada API
-import { useAuth } from '../contexts/AuthContext'; // Importe useAuth
+import { loginUser } from '../services/authService'; 
+import { useAuth } from '../contexts/AuthContext'; 
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useAuth(); // Pegue a função login do contexto
+  const { login } = useAuth(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     try {
       const credentials = { email, password };
-      const response = await loginUser(credentials); // Chama o serviço
+      const response = await loginUser(credentials); 
       if (response.token) {
-        login(response.token); // Usa a função login do contexto para atualizar estado e localStorage
+        login(response.token); 
         toast.success(response.message || 'Login bem-sucedido!');
         navigate('/dashboard');
       } else {
-        // Caso o backend não retorne token mesmo com status 200 (improvável, mas seguro)
+    
         toast.error(response.message || 'Token não recebido.');
       }
     } catch (error) {
@@ -32,7 +32,7 @@ function LoginPage() {
     setIsLoading(false);
   };
 
-  // ... restante do JSX do formulário (não muda)
+
   return (
     <div>
       <h2>Login</h2>

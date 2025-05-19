@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importado
-import { toast } from 'react-toastify'; // Importado
-import { registerUser } from '../services/authService'; // Importado
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'; 
+import { registerUser } from '../services/authService'; 
 
 function RegisterPage() {
   const [username, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // Para feedback de carregamento
-  const navigate = useNavigate(); // Hook para navegação
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,11 +16,11 @@ function RegisterPage() {
     try {
       const userData = { username, email, password };
       const response = await registerUser(userData);
-      // Assumindo que seu backend envia uma mensagem de sucesso
+
       toast.success(response.message || 'Cadastro realizado com sucesso! Faça o login.'); 
-      navigate('/login'); // Redireciona para a página de login após o sucesso
+      navigate('/login');
     } catch (error) {
-      // error.message virá do throw no authService
+
       toast.error(error.message || 'Não foi possível realizar o cadastro.');
     }
     setIsLoading(false);

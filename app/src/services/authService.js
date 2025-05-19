@@ -28,10 +28,10 @@ export const loginUser = async (credentials) => {
 
 export const logoutUser = () => {
   localStorage.removeItem('authToken');
-  // Aqui você pode adicionar qualquer outra lógica de limpeza necessária
+
 };
 
-// Função para pegar o token (pode ser útil em outros services)
+// Função para pegar o token 
 export const getToken = () => {
   return localStorage.getItem('authToken');
 };
