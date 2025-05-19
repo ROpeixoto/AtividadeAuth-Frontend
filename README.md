@@ -16,7 +16,7 @@ Este é o frontend para a aplicação de Lista de Compras, desenvolvido com Reac
 ## Pré-requisitos
 
 - Node.js (versão 14 ou superior)
-- NPM ou Yarn
+- NPM
 - Backend da aplicação rodando (API de Lista de Compras)
 
 ## Instalação
@@ -30,8 +30,6 @@ Este é o frontend para a aplicação de Lista de Compras, desenvolvido com Reac
 2. **Instale as dependências:**
    ```bash
    npm install
-   # ou
-   yarn install
    ```
 
 3. **Configure as variáveis de ambiente:**
@@ -45,8 +43,6 @@ Este é o frontend para a aplicação de Lista de Compras, desenvolvido com Reac
 4. **Inicie o servidor de desenvolvimento:**
    ```bash
    npm run dev
-   # ou
-   yarn dev
    ```
 
 5. **Acesse a aplicação:**
@@ -59,8 +55,6 @@ Para gerar uma versão de produção:
 
 ```bash
 npm run build
-# ou
-yarn build
 ```
 
 Os arquivos serão gerados na pasta `dist` e podem ser servidos por qualquer servidor web estático.
